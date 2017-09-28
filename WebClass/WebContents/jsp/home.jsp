@@ -15,7 +15,7 @@ div.container {
   padding-bottom: 20px;
 }
 </style>
-<link rel="stylesheet" href="/WebClass/css/footer.css">
+<link rel="stylesheet" href="../css/footer.css">
 
 <script>
 function menu_over(e) {
