@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/signup")
 public class SignUpServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -22,37 +22,32 @@ public class SignUpServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        response.getWriter().append("Served at: ").append(request.getContextPath());
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	@SuppressWarnings("unchecked")
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-	    
-	    String grade = request.getParameter("grade");
-	    String ban = request.getParameter("ban");
-	    String num = request.getParameter("num");
-	    String name = request.getParameter("name");
-	    System.out.printf("grade : %s, ban : %s, num : %s, name : %s\n", grade, ban, num, name);
-	    
-//	    JSONObject json = new JSONObject();
-//	    json.put("name", name);
-//	    System.out.println(json.toJSONString());
-//	    out.write(json.toJSONString());
-//	    out.close();
-	    
-	    RequestDispatcher rd = request.getRequestDispatcher("/html/signup.html");
-	    rd.forward(request, response);
-	}
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    @SuppressWarnings("unchecked")
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter out = response.getWriter();
+
+        String grade = request.getParameter("grade");
+        String ban = request.getParameter("ban");
+        String num = request.getParameter("num");
+        String name = request.getParameter("name");
+        System.out.printf("grade : %s, ban : %s, num : %s, name : %s\n", grade, ban, num, name);
+
+
+        RequestDispatcher rd = request.getRequestDispatcher("/html/signup.html");
+        rd.forward(request, response);
+    }
 
 }
