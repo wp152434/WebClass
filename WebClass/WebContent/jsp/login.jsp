@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,18 +7,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>LogIn</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-<link rel="stylesheet" href="${contextPath}/css/signin.css">
+<link rel="stylesheet" href="/WebClass/css/signin.css">
 </head>
 <body>
 <div class="container">
 
 <%
-	//String id = request.getParameter("id") == null ? "" : request.getParameter("id");
+	String id = request.getParameter("id") == null ? "" : request.getParameter("id");
 %>
-  <form class="form-signin" action="${contextPath}/login.do" method="post">
+  <form class="form-signin" action="/WebClass/login" method="post">
     <h2 class="form-signin-heading">Please sign in</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" value="${param.id}" class="form-control" placeholder="Email address"  autofocus>
+    <input type="email" name="id" id="inputEmail" value="<%=id%>" class="form-control" placeholder="Email address"  autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" >
 
@@ -42,7 +38,7 @@
 		var myModal = $('#myModal');
 		myModal.find('.modal-title').text('Login Error');
 		//myModal.find('.modal-body').text('Invalid username or password');
-		myModal.find('.modal-body').text('${error}');
+		myModal.find('.modal-body').text('<%= request.getAttribute("detail") %>');
 		myModal.modal();
 	<% } %>
 </script>

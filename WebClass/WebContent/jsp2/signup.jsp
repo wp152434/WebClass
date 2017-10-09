@@ -13,21 +13,21 @@
 <div class="container">
 
 <%
-	String id = request.getParameter("id") == null ? "" : request.getParameter("id");
-	String pwd = request.getParameter("pwd") == null ? "" : request.getParameter("pwd");
-	String name = request.getParameter("name") == null ? "" : request.getParameter("name");
-	String nickname = request.getParameter("nickname") == null ? "" : request.getParameter("nickname");
+	//String id = request.getParameter("id") == null ? "" : request.getParameter("id");
+	//String pwd = request.getParameter("pwd") == null ? "" : request.getParameter("pwd");
+	//String name = request.getParameter("name") == null ? "" : request.getParameter("name");
+	//String nickname = request.getParameter("nickname") == null ? "" : request.getParameter("nickname");
 %>
   <form id="signupForm" class="form-signin" action="/WebClass/signup" method="post">
     <h2 class="form-signin-heading">Please sign up</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" value="<%=id%>" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="id" id="inputEmail" value="${ param.id }" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" value="<%=pwd%>" class="form-control" placeholder="Password" required>
+    <input type="password" name="pwd" id="inputPassword" value="${ param.pwd }" class="form-control" placeholder="Password" required>
 	<label for="inputName" class="sr-only">Name</label>
-    <input type="text" name="name" id="inputName" value="<%=name%>" class="form-control" placeholder="Name" required>
+    <input type="text" name="name" id="inputName" value="${ param.name }" class="form-control" placeholder="Name" required>
 	<label for="inputNickName" class="sr-only">Nick Name</label>
-    <input type="text" name="nickname" id="inputNickName" value="<%=nickname%>" class="form-control" placeholder="Nickname" required>
+    <input type="text" name="nickname" id="inputNickName" value="${ param.nickname }" class="form-control" placeholder="Nickname" required>
     <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   </form>

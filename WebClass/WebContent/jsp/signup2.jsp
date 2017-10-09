@@ -12,22 +12,16 @@
 <body>
 <div class="container">
 
-<%
-	String id = request.getParameter("id") == null ? "" : request.getParameter("id");
-	String pwd = request.getParameter("pwd") == null ? "" : request.getParameter("pwd");
-	String name = request.getParameter("name") == null ? "" : request.getParameter("name");
-	String nickname = request.getParameter("nickname") == null ? "" : request.getParameter("nickname");
-%>
-  <form id="signupForm" class="form-signin" action="/WebClass/signup" method="post">
+  <form id="signupForm" class="form-signin">
     <h2 class="form-signin-heading">Please sign up</h2>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" name="id" id="inputEmail" value="<%=id%>" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="id" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" name="pwd" id="inputPassword" value="<%=pwd%>" class="form-control" placeholder="Password" required>
+    <input type="password" name="pwd" id="inputPassword" class="form-control" placeholder="Password" required>
 	<label for="inputName" class="sr-only">Name</label>
-    <input type="text" name="name" id="inputName" value="<%=name%>" class="form-control" placeholder="Name" required>
+    <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required>
 	<label for="inputNickName" class="sr-only">Nick Name</label>
-    <input type="text" name="nickname" id="inputNickName" value="<%=nickname%>" class="form-control" placeholder="Nickname" required>
+    <input type="text" name="nickname" id="inputNickName" class="form-control" placeholder="Nickname" required>
     <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
   </form>
@@ -40,13 +34,37 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script>
-	<% if("error".equals(request.getAttribute("msg"))) { %>
-		var myModal = $('#myModal');
-		myModal.find('.modal-title').text('Sign Up Error');
-		myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
-		myModal.modal();
-	<% } %>
+$(document).ready(function() {
+	$('#signupForm').submit(function (event) {
+		// Stop form from submitting normally
+		event.preventDefault();
+		
+		var id = $("#inputEmail").val();
+		var pwd = $("#inputPassword").val();
+		var name = $("#inputName").val();
+		var nickname = $("#inputNickName").val();
+		
+		$.post("/WebClass/signup", 
+				{ 
+				  "id": id, 
+				  "pwd": pwd,
+				  "name": name,
+				  "nickname": nickname
+				},
+				function(data) {
+				    if(data.msg == 'success') {
+				    	location.href = "jsp/login.jsp";
+				    } else if(data.msg == 'error') {
+					  	var myModal = $('#myModal');
+						myModal.find('.modal-title').text('Sign Up Error');
+						//myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
+						myModal.find('.modal-body').text(data.detail);
+						myModal.modal();
+					}
+			    });
+	});
+});
 </script>
-
+	
 </body>
 </html>
