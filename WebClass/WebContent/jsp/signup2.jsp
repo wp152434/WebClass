@@ -57,7 +57,7 @@ $(document).ready(function() {
 				    } else if(data.msg == 'error') {
 					  	var myModal = $('#myModal');
 						myModal.find('.modal-title').text('Sign Up Error');
-						//myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
+						myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
 						myModal.find('.modal-body').text(data.detail);
 						myModal.modal();
 					}

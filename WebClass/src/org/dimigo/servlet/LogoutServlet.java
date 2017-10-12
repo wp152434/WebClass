@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+/**
+ * Servlet implementation class LoginServlet
+ */
 @WebServlet(description = "로그아웃 서블릿", urlPatterns = { "/logout" })
 public class LogoutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -39,7 +42,7 @@ public class LogoutServlet extends HttpServlet {
     	session.invalidate();
     	
     	response.setContentType("text/html;charset=utf-8");
-    	RequestDispatcher rd = request.getRequestDispatcher("jsp/home.jsp");
+    	RequestDispatcher rd = request.getRequestDispatcher("jsp2/home.jsp");
 	    rd.forward(request, response);
 	}
 

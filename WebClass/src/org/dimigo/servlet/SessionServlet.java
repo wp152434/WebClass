@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Servlet implementation class SessionServlet
+ */
 @WebServlet("/session")
 public class SessionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,9 +29,9 @@ public class SessionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession().getAttribute("user") == null) {
-			response.sendRedirect("jsp/login.jsp");
+			response.sendRedirect("jsp2/login.jsp");
 		} else {
-			RequestDispatcher rd = request.getRequestDispatcher("jsp/sessionInfo.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("jsp2/sessionInfo.jsp");
 			rd.forward(request, response);
 		}
 	}
