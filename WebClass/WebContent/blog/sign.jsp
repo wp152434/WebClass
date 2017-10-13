@@ -24,7 +24,7 @@
         %>
         <div class="content">
             <div class="signin-cont cont">
-                <form action="/WebClass/bloglogin" method="post" enctype="multipart/form-data" id="signin">
+                <form action="/WebClass/bloglogin" method="post" id="signin">
                     <input type="email" name="id" id="id" class="inpt" required="required" placeholder="Username" value="<%=id%>">
                     <label for="id">Username</label>
                     <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password" value="<%=password%>">
