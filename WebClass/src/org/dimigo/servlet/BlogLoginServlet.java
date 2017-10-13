@@ -34,7 +34,7 @@ public class BlogLoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             UserVO user = new UserVO();
             user.setId(id);
-            user.setName("ChoiChanhwan");
+            user.setName("최찬환");
             session.setAttribute("user", user);
             RequestDispatcher rd = request.getRequestDispatcher("blog/index.jsp");
             rd.forward(request, response);
