@@ -28,7 +28,7 @@
             <a class="nav-item nav-link" onclick="fnMove('hobby')">Hobby</a>
             <a class="nav-item nav-link" onclick="fnMove('dream')">Dream</a>
             <% if (vo == null) { %>
-                <a class="nav-item nav-link" href="sign.jsp">Sign in</a>
+                <a class="nav-item nav-link" href="/WebClass/blog/sign.jsp">Sign in</a>
             <% } else { %>
                 <a class="nav-item nav-link">Hi, <%=vo.getId()%></a>
                 <a class="nav-item nav-link" href="/WebClass/bloglogout">log out</a>
