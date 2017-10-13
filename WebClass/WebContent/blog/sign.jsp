@@ -74,10 +74,10 @@
     <% if("error".equals(request.getAttribute("msg"))) { %>
         console.log("error");
         var myModal = $('#myModal');
-        myModal.find('.modal-title').text('sign in error');
+        myModal.find('.modal-title')e.text('sign in error');
         myModal.find('.modal-body').text('Wrong id.');
         myModal.modal();
-    <% } else { %>
+    <% } else if ("success".equals(request.getAttribute("msg"))) { %>
         console.log("success");
         location.href("index.jsp");
     <% }%>

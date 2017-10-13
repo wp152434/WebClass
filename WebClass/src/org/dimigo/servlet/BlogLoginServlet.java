@@ -27,9 +27,11 @@ public class BlogLoginServlet extends HttpServlet {
             result = false;
 
         if(result) {
+            log(id);
             HttpSession session = request.getSession();
             UserVO user = new UserVO();
             user.setId(id);
+            request.setAttribute("msg", "success");
             session.setAttribute("user", user);
             RequestDispatcher rd = request.getRequestDispatcher("blog/sign.jsp");
             rd.forward(request, response);
