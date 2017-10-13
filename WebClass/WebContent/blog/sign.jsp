@@ -87,13 +87,16 @@
 </div>
 
 <%@ include file="modal.jsp" %>
+
 <script>
     <% if("error".equals(request.getAttribute("msg"))) { %>
+        console.log("error");
         var myModal = $('#myModal');
         myModal.find('.modal-title').text('Sign Up Error');
         myModal.find('.modal-body').text('id가 틀렸습니다.');
         myModal.modal();
     <% } else { %>
+        console.log("success");
         location.href("index.jsp");
     <% }%>
 </script>
