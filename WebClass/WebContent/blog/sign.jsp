@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>Choichanhwan</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/sign.css">
+    <link rel="stylesheet" type="text/css" href="WebClass/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="WebClass/css/sign.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script rel="script" type="text/javascript" src="../project/WebContent/js/bootstrap.js"></script>
+    <script rel="script" type="text/javascript" src="WebClass/js/bootstrap.js"></script>
 </head>
 <body>
 <div class="container">
@@ -100,7 +100,7 @@
         location.href("index.jsp");
     <% }%>
 </script>
-<script rel="script" type="text/javascript" src="../js/sign.js?ver=0.0.3"></script>
+<script rel="script" type="text/javascript" src="WebClass/js/sign.js?ver=0.0.3"></script>
 </body>
 
 </html>
