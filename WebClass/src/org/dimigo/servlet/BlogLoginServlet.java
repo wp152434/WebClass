@@ -13,6 +13,15 @@ import java.io.IOException;
 
 @WebServlet("/bloglogin")
 public class BlogLoginServlet extends HttpServlet {
+
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BlogLoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         //response.setContentType("text/html;charset=utf-8");
