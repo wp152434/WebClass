@@ -76,9 +76,7 @@
         myModal.find('.modal-title').text('sign in error');
         myModal.find('.modal-body').text('Wrong id.');
         myModal.modal();
-    <% } else if ("success".equals(request.getAttribute("msg"))) { %>
-        location.href("/WebClass/blog/index.jsp");
-    <% }%>
+    <% } %>
 </script>
 <script rel="script" type="text/javascript" src="/WebClass/js/sign.js?ver=0.0.3"></script>
 </body>

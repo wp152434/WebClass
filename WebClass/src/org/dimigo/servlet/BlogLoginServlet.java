@@ -15,7 +15,7 @@ import java.io.IOException;
 public class BlogLoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=utf-8");
+        //response.setContentType("text/html;charset=utf-8");
 
         String id = request.getParameter("id");
         String password = request.getParameter("password");
@@ -25,9 +25,8 @@ public class BlogLoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             UserVO user = new UserVO();
             user.setId(id);
-            request.setAttribute("msg", "success");
             session.setAttribute("user", user);
-            RequestDispatcher rd = request.getRequestDispatcher("blog/sign.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("blog/index.jsp");
             rd.forward(request, response);
         } else {
             request.setAttribute("msg", "error");
