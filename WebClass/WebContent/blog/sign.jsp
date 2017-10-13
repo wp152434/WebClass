@@ -79,7 +79,7 @@
         myModal.modal();
     <% } else if ("success".equals(request.getAttribute("msg"))) { %>
         console.log("success");
-        location.href("index.jsp");
+        location.href("/WebClass/blog/index.jsp");
     <% }%>
 </script>
 <script rel="script" type="text/javascript" src="/WebClass/js/sign.js?ver=0.0.3"></script>
