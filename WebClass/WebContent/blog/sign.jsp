@@ -72,14 +72,11 @@
 <script>
     console.log("<%=request.getAttribute("msg")%>");
     <% if("error".equals(request.getAttribute("msg"))) { %>
-        console.log("error");
         var myModal = $('#myModal');
         myModal.find('.modal-title')e.text('sign in error');
         myModal.find('.modal-body').text('Wrong id.');
         myModal.modal();
     <% } else if ("success".equals(request.getAttribute("msg"))) { %>
-        alert("success");
-        console.log("success");
         location.href("/WebClass/blog/index.jsp");
     <% }%>
 </script>
