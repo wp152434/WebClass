@@ -22,6 +22,12 @@ public class BlogLogoutServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+        session.invalidate();
 
+        response.setContentType("text/html;charset=utf-8");
+        RequestDispatcher rd = request.getRequestDispatcher("blog/index.jsp");
+        rd.forward(request, response);
     }
 }
