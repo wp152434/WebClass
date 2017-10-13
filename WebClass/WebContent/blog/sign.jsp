@@ -70,11 +70,12 @@
 <%@ include file="modal.jsp" %>
 
 <script>
+    console.log("<%=request.getAttribute("msg")%>");
     <% if("error".equals(request.getAttribute("msg"))) { %>
         console.log("error");
         var myModal = $('#myModal');
-        myModal.find('.modal-title').text('Sign Up Error');
-        myModal.find('.modal-body').text('id가 틀렸습니다.');
+        myModal.find('.modal-title').text('sign in error');
+        myModal.find('.modal-body').text('Wrong id.');
         myModal.modal();
     <% } else { %>
         console.log("success");
