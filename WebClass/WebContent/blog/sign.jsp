@@ -20,14 +20,13 @@
         </div>
         <%
             String id = request.getParameter("id") == null ? "" : request.getParameter("id");
-            String password = request.getParameter("password") == null ? "" : request.getParameter("password");
         %>
         <div class="content">
             <div class="signin-cont cont">
                 <form action="/WebClass/bloglogin" method="post" id="signin">
                     <input type="email" name="id" id="id" class="inpt" required="required" placeholder="Username" value="<%=id%>">
                     <label for="id">Username</label>
-                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password" value="<%=password%>">
+                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
                     <label for="password">Your password</label>
                     <div class="submit-wrap">
                         <input id="signinBtn" type="submit" value="Sign in" class="submit" data-toggle="modal" data-target="#signModal">
