@@ -27,7 +27,6 @@ public class BlogLoginServlet extends HttpServlet {
             result = false;
 
         if(result) {
-            log(id);
             HttpSession session = request.getSession();
             UserVO user = new UserVO();
             user.setId(id);
