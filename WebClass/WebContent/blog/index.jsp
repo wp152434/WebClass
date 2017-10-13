@@ -30,7 +30,7 @@
             <% if (vo == null) { %>
                 <a class="nav-item nav-link" href="/WebClass/blog/sign.jsp">Sign in</a>
             <% } else { %>
-                <a class="nav-item nav-link">Hi, <%=vo.getId()%></a>
+                <a class="nav-item nav-link">Hi, <%=vo.getName()%></a>
                 <a class="nav-item nav-link" href="/WebClass/bloglogout">log out</a>
             <% } %>
         </div>
