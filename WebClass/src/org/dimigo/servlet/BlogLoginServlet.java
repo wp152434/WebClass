@@ -20,13 +20,8 @@ public class BlogLoginServlet extends HttpServlet {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
         System.out.printf("id : %s, password : %s\n", id, password);
-        boolean result;
-        if ("test@naver.com".equals(id))
-            result = true;
-        else
-            result = false;
 
-        if(result) {
+        if("test@naver.com".equals(id)) {
             HttpSession session = request.getSession();
             UserVO user = new UserVO();
             user.setId(id);
