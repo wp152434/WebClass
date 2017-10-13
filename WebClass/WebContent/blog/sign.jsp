@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <title>Choichanhwan</title>
-    <link rel="stylesheet" type="text/css" href="WebClass/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="WebClass/css/sign.css">
+    <link rel="stylesheet" type="text/css" href="/WebClass/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/WebClass/css/sign.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script rel="script" type="text/javascript" src="WebClass/js/bootstrap.js"></script>
+    <script rel="script" type="text/javascript" src="/WebClass/js/bootstrap.js"></script>
 </head>
 <body>
 <div class="container">
@@ -24,7 +24,7 @@
         %>
         <div class="content">
             <div class="signin-cont cont">
-                <form action="../bloglogin" method="post" enctype="multipart/form-data" id="signin">
+                <form action="/WebClass/bloglogin" method="post" enctype="multipart/form-data" id="signin">
                     <input type="email" name="id" id="id" class="inpt" required="required" placeholder="Username" value="<%=id%>">
                     <label for="id">Username</label>
                     <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password" value="<%=password%>">
@@ -67,25 +67,6 @@
     <div class="half bg"></div>
 </div>
 
-<div class="modal fade" id="signModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTitle">modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p id="modal-text"></p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="submit-btn" data-dismiss="modal" aria-label="Close">OK</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <%@ include file="modal.jsp" %>
 
 <script>
@@ -100,7 +81,7 @@
         location.href("index.jsp");
     <% }%>
 </script>
-<script rel="script" type="text/javascript" src="WebClass/js/sign.js?ver=0.0.3"></script>
+<script rel="script" type="text/javascript" src="/WebClass/js/sign.js?ver=0.0.3"></script>
 </body>
 
 </html>
