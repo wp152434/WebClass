@@ -18,12 +18,16 @@
             <span class="tab signin active"><a href="#signin">Sign in</a></span>
             <span class="tab signup"><a href="#signup">Sign up</a></span>
         </div>
+        <%
+            String id = request.getParameter("id") == null ? "" : request.getParameter("id");
+            String password = request.getParameter("password") == null ? "" : request.getParameter("password");
+        %>
         <div class="content">
             <div class="signin-cont cont">
-                <form action="../login" method="post" enctype="multipart/form-data" id="signin">
-                    <input type="email" name="username" id="id" class="inpt" required="required" placeholder="Username">
+                <form action="../bloglogin" method="post" enctype="multipart/form-data" id="signin">
+                    <input type="email" name="id" id="id" class="inpt" required="required" placeholder="Username" value="<%=id%>">
                     <label for="id">Username</label>
-                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password" value="<%=password%>">
                     <label for="password">Your password</label>
                     <div class="submit-wrap">
                         <input id="signinBtn" type="submit" value="Sign in" class="submit" data-toggle="modal" data-target="#signModal">
@@ -82,6 +86,17 @@
     </div>
 </div>
 
+<%@ include file="modal.jsp" %>
+<script>
+    <% if("error".equals(request.getAttribute("msg"))) { %>
+        var myModal = $('#myModal');
+        myModal.find('.modal-title').text('Sign Up Error');
+        myModal.find('.modal-body').text('id가 틀렸습니다.');
+        myModal.modal();
+    <% } else { %>
+        location.href("index.jsp");
+    <% }%>
+</script>
 <script rel="script" type="text/javascript" src="../js/sign.js?ver=0.0.3"></script>
 </body>
 

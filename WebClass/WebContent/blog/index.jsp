@@ -1,3 +1,4 @@
+<%@ page import="org.dimigo.vo.UserVO" %>
 <!DOCTYPE html>
 <html>
 
@@ -12,6 +13,9 @@
 </head>
 
 <body>
+<%
+    UserVO vo = (UserVO) session.getAttribute("user");
+%>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,7 +27,12 @@
             <a class="nav-item nav-link" onclick="fnMove('motto')">Motto</a>
             <a class="nav-item nav-link" onclick="fnMove('hobby')">Hobby</a>
             <a class="nav-item nav-link" onclick="fnMove('dream')">Dream</a>
-            <a class="nav-item nav-link" href="sign.jsp">Sign in</a>
+            <% if (vo.getId() == null) { %>
+                <a class="nav-item nav-link" href="sign.jsp">Sign in</a>
+            <% } else { %>
+                <a class="nav-item nav-link"><%=vo.getId()%> 회원님</a>
+                <a class="nav-item nav-link" href="../bloglogout">log out</a>
+            <% } %>
         </div>
     </div>
 </nav>
