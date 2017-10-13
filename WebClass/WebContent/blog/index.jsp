@@ -27,11 +27,11 @@
             <a class="nav-item nav-link" onclick="fnMove('motto')">Motto</a>
             <a class="nav-item nav-link" onclick="fnMove('hobby')">Hobby</a>
             <a class="nav-item nav-link" onclick="fnMove('dream')">Dream</a>
-            <% if ("test@naver.com".equals(vo.getId())) { %>
+            <% if (vo == null) { %>
+                <a class="nav-item nav-link" href="sign.jsp">Sign in</a>
+            <% } else { %>
                 <a class="nav-item nav-link"><%=vo.getId()%> 회원님</a>
                 <a class="nav-item nav-link" href="../bloglogout">log out</a>
-            <% } else { %>
-                <a class="nav-item nav-link" href="sign.jsp">Sign in</a>
             <% } %>
         </div>
     </div>
