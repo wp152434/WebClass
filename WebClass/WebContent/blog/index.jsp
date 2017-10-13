@@ -5,11 +5,11 @@
 <head>
     <meta charset="utf-8">
     <title>Choichanhwan</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="WebClass/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="WebClass/css/index.css">
     <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script rel="script" type="text/javascript" src="../js/bootstrap.js"></script>
-    <script rel="script" type="text/javascript" src="../js/index.js"></script>
+    <script rel="script" type="text/javascript" src="WebClass/js/bootstrap.js"></script>
+    <script rel="script" type="text/javascript" src="WebClass/js/index.js"></script>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                 <a class="nav-item nav-link" href="sign.jsp">Sign in</a>
             <% } else { %>
                 <a class="nav-item nav-link"><%=vo.getId()%> 회원님</a>
-                <a class="nav-item nav-link" href="../bloglogout">log out</a>
+                <a class="nav-item nav-link" href="WebClass/bloglogout">log out</a>
             <% } %>
         </div>
     </div>
@@ -67,15 +67,15 @@
     <div class="row">
         <div class="col">
             <div class="card" style="width: 20rem;">
-                <img class="card-img-top camera-img" src="../assests/img/camera.jpg" alt="Card image cap">
-                <div class="card-body">
+                <img class="card-img-top camera-img" src="WebClass/assests/img/camera.jpg" alt="Card image cap">
+                <div class="card-body"
                     <h4 class="card-title">Take pictures</h4>
                 </div>
             </div>
         </div>
         <div class="col">
             <div class="card" style="width: 20rem;">
-                <img class="card-img-top music-img" src="../assests/img/music.jpg" alt="Card image cap">
+                <img class="card-img-top music-img" src="WebClass/assests/img/music.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="card-title">Listening to music</h4>
                 </div>
@@ -83,7 +83,7 @@
         </div>
         <div class="col">
             <div class="card" style="width: 20rem;">
-                <img class="card-img-top" src="../assests/img/codeing.jpg" alt="Card image cap">
+                <img class="card-img-top" src="WebClass/assests/img/codeing.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="card-title">Coding</h4>
                 </div>
